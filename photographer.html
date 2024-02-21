@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <div id="main_container">
+    <header>
+      <a href="./index.html" aria-label="Retour vers la page d'acceuil">
+        <img src="assets/images/logo.png" class="logo" alt="Logo de Fisheye" />
+      </a>
+    </header>
+    <main id="main">
+      <div class="photograph-header">
+        <div class="photograph-info">
+          <h1 class="photograph-name">Prenom Nom</h1>
+          <div class="photograph-info-description">
+            <h2 class="photograph-city">Ville, Pays</h2>
+            <p class="photograph-tagline">Tagline du photographe</p>
+          </div>
+        </div>
+        <button class="contact_button">Contactez-moi</button>
+        <img src="./assets/photographers/account.png" alt="Photo du photographe" class="photograph-profil-picture">
+      </div>
+
+      <div class="photograph-photos">
+        <div class="photograph-photos-filter">
+          <label class="input-label" for="filter">Trier par</label>
+          <select id="filter" class="filter-input" name="filter">
+            <option value="pop">Popularité</option>
+            <option value="date">Date</option>
+            <option value="titre">Titre</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="photograph-grid">
+      </div>
+
+      <div class="footer-block">
+        <p id="like-counter"><span class="like-counter-count"></span><em class="fa-heart fa-solid"></em></p>
+        <p id="price"></p>
+      </div>
+    </main>
+  </div>
+
+  <!--Modal de contact-->
+  <div id="contact_modal" inert>
+    <div class="modal" role="dialog" aria-describedby="contact_modal_title">
+      <header>
+        <h2 id="contact_modal_title">Contactez-moi<br><span id="modal_photo_name"></span></h2>
+        <a href="javascript:;"  id="contactCloseBtn" tabindex="6" aria-label="Fermer le formulaire de contact"><img src="assets/icons/close.svg" alt="Fermer le formulaire de contact"  /></a>
+      </header>
+      <form action="javascript:;">
+        <div>
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" tabindex="1">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" tabindex="2">
+          <label for="mail">Email</label>
+          <input type="email" id="mail" name="mail" tabindex="3">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" tabindex="4"></textarea>
+        </div>
+        <button class="contact_button" type="submit" tabindex="5">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <!--Modal de lightbox-->
+  <div id="bg-lightbox" inert>
+    <div class="lightbox" role="dialog">
+      <div>
+        <a href="javascript:;"  id="lightboxBtnPrev" tabindex="1"><img class="lightbox-icon" src="assets/icons/left.svg" alt="Média précédent"/></a>
+      </div>
+      <div id="lightbox-img">
+      </div>
+      <div>
+        <a href="javascript:;" id="lightboxBtnClose" class="lightbox-icon lightbox-icon-close" tabindex="4"><img  src="assets/icons/close-colored.svg"
+          alt="Fermer la lightbox" /></a>
+        <a href="javascript:;"  id="lightboxBtnNext"  class="lightbox-icon" tabindex="3"><img src="assets/icons/right.svg" alt="Média suivant"/></a>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./scripts/pages/photographer.js"></script>
+</body>
+
+</html>
